@@ -1,0 +1,88 @@
+
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+% coordinates for the bg shape on the titlepage
+\newcommand{\diameter}{20}
+\newcommand{\xone}{-60}
+\newcommand{\xtwo}{440}
+\newcommand{\yone}{60}
+\newcommand{\ytwo}{-700}
+
+
+\begin{titlepage}
+\setlength{\oddsidemargin}{1cm}
+\setlength{\topmargin}{-1cm}
+
+
+% bg shape
+\begin{tikzpicture}[overlay]
+\draw[color=gray]
+   (\xone pt, \yone pt)
+ -- (\xtwo pt, \yone pt)
+arc (90:0:\diameter pt)
+ -- (\xtwo + \diameter pt , \ytwo pt)
+-- (\xone + \diameter pt , \ytwo pt)
+arc (270:180:\diameter pt)
+-- (\xone pt, \yone pt);
+\end{tikzpicture}
+\begin{textblock}{10}[0,0](1.5,1.3)
+ \includegraphics[width=.3\textwidth]{KITlogo.pdf}
+\end{textblock}
+\begin{textblock}{10}[0,0](8.3,1.3)
+\begin{flushleft}
+\large Institut f\"{u}r Technische Informatik\\
+Chair for Embedded Systems
+  \end{flushleft}
+\end{textblock}
+
+\changefont{phv}{m}{n} % helvetica
+\vspace*{3.5cm}
+{
+\centering
+ \huge{Improving Usability and Reliability of an IoT-based Controller for a Coffee Machine}
+
+ \vspace*{2cm}
+ \large{Bachelorarbeit \\ von}\\
+ \vspace*{1cm}
+ \Large{Simon Korz}\\
+ \vspace*{1cm}
+ \normalsize{
+
+ an der Fakult\"{a}t f\"{u}r Informatik\\
+%  at the Department of Computer Science\\
+ }
+
+\vspace*{3cm}
+\normalsize{
+\begin{tabular}[ht]{l c l}
+   Betreuer: & \medskip  & Prof. Dr. J\"org Henkel\\
+   Betreuende Mitarbeiter : &\medskip & Dr.-Ing Lars Bauer \\
+   Betreuende Mitarbeiter : &\medskip & Dr.-Ing Farzad Samie \\
+ & & \\
+ & & \\
+%
+%  Die nächsten 2 Punkte werden für Seminare nicht benötigt
+%
+  Tag der Anmeldung: & \medskip  & 11.11.2019\\
+  Tag der Abgabe: & \medskip & 10.03.2020\\
+
+\end{tabular}
+}
+%\begin{textblock}{10}[0,0](3,14)
+%\large{Time: XX.04.2010 \hspace*{0.25cm} -- \hspace*{0.25cm} XX.XX.2009}
+%\end{textblock}
+
+}
+%\begin{textblock}{10}[0,0](1.75,15.365)
+%\tiny{
+% KIT -- Universit\"{a}t des Landes Baden-W\"{u}rttemberg und nationales Forschungszentrum in der Helmholtz-Gemeinschaft
+%}
+%\end{textblock}
+
+\begin{textblock}{10}[0,0](9.7,14.95)
+Chair for Embedded Systems
+ \includegraphics[width=.07\textwidth]{CESlogo.pdf}
+\end{textblock}
+
+
+\end{titlepage} 

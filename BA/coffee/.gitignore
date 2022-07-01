@@ -1,0 +1,22 @@
+__pycache__
+logs
+*.swp
+*.pyc
+*.~lock*
+
+Thesis_Simon/coffee-v3/res/images/
+
+# Latex
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+ausarbeitung.pdf

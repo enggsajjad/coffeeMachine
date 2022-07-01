@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+    mysql:
+        image: mariadb:5.5.61
+        # image: mysql/mysql-server
+        container_name: coffee-db
+        #restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: coffee
+            #MYSQL_USER: root
+            #MYSQL_PASSWORD: 27#j1pFAIm
+        #volumes:
+            #- ./initdb:/docker-entrypoint-initdb.d
+        ports:
+            - 3306:3306
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: coffee-phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+        #restart: always
+        ports:
+            - 8081:80
+        volumes:
+            - /sessions

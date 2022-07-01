@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448"
+   height="500"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="general.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.4184193"
+     inkscape:cx="334.5939"
+     inkscape:cy="408.20318"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-552.36218)">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3.51168633;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3045"
+       width="727.80835"
+       height="274.24982"
+       x="12.357368"
+       y="752.51642"
+       ry="64.701157" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3047"
+       width="552.55347"
+       height="88.893425"
+       x="99.984795"
+       y="863.37732"
+       ry="44.446712" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3049"
+       width="208.09143"
+       height="48.487324"
+       x="122.20815"
+       y="812.86969"
+       ry="24.243662" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3049-5"
+       width="208.09143"
+       height="48.487324"
+       x="388.88843"
+       y="812.86969"
+       ry="24.243662" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="304.03561"
+       y="772.46362"
+       id="text3069"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3071"
+         x="304.03561"
+         y="772.46362">Hardware</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="294.49753"
+       y="917.94586"
+       id="text3073"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3075"
+         x="294.49753"
+         y="917.94586">Raspberry Pi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="161.00005"
+       y="844.10321"
+       id="text3077"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3079"
+         x="161.00005"
+         y="844.10321">RFID Reader</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="455.5585"
+       y="843.13367"
+       id="text3081"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3083"
+         x="455.5585"
+         y="843.13367">Screen</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2.927665;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3047-3"
+       width="642.52936"
+       height="72.803322"
+       x="60.138912"
+       y="952.96051"
+       ry="36.401661" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="170.63965"
+       y="995.68701"
+       id="text3103"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3105"
+         x="170.63965"
+         y="995.68701">Adapter Coffee machine/ Raspberry Pi</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:2.05731702;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3107"
+       width="739.28491"
+       height="169.39775"
+       x="3.5889006"
+       y="577.78748"
+       ry="17.099117" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.99726832;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3109"
+       width="245.84174"
+       height="138.59615"
+       x="2.5337422"
+       y="609.08411"
+       ry="17.104193" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.99726832;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3109-2"
+       width="245.84174"
+       height="138.59615"
+       x="497.58157"
+       y="608.13513"
+       ry="17.104193" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.99726832;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3109-9"
+       width="245.84174"
+       height="138.59615"
+       x="247.78215"
+       y="608.59052"
+       ry="17.104193" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.61288261px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="302.13309"
+       y="614.26611"
+       id="text3168"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0197379,0.98064415)"><tspan
+         sodipodi:role="line"
+         id="tspan3170"
+         x="302.13309"
+         y="614.26611">Software</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="340.42142"
+       y="441.21988"
+       id="text3172"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3174"
+         x="340.42142"
+         y="441.21988" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="332.34018"
+       y="477.58539"
+       id="text3176"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3178"
+         x="332.34018"
+         y="477.58539" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.61288261px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="285.64648"
+       y="703.23151"
+       id="text3180"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0197379,0.98064415)"><tspan
+         sodipodi:role="line"
+         id="tspan3182"
+         x="285.64648"
+         y="703.23151"
+         style="font-size:19.61288261px">User Interface</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.61288261px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="13.848489"
+       y="702.87494"
+       id="text3184"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0197379,0.98064415)"><tspan
+         sodipodi:role="line"
+         id="tspan3186"
+         x="13.848489"
+         y="702.87494">Monitoring System</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.61288261px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="534.96387"
+       y="702.87494"
+       id="text3188"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0197379,0.98064415)"><tspan
+         sodipodi:role="line"
+         id="tspan3190"
+         x="534.96387"
+         y="702.87494">Main Controller</tspan></text>
+  </g>
+</svg>

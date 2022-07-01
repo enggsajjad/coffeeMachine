@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e} \ProvidesPackage{WritingTools}
+
+\RequirePackage{ifthen}
+
+\newboolean{bool@final} \newboolean{bool@Final}
+
+\DeclareOption{Final}{
+  \setboolean{bool@Final}{true}
+  \setboolean{bool@final}{false}
+}
+
+\DeclareOption{final}{
+  \setboolean{bool@final}{true}
+  \setboolean{bool@Final}{false}
+}
+
+\DeclareOption{draft}{
+  \setboolean{bool@final}{false}
+  \setboolean{bool@Final}{false}
+}
+
+\ExecuteOptions{draft}
+\ProcessOptions
+
+\ifthenelse{\boolean{bool@final}}{
+   
+    \usepackage[disable]{todonotes}
+}{
+  \ifthenelse{\boolean{bool@Final}}{
+     
+      \usepackage[disable]{todonotes}
+  }{
+      
+      \usepackage[german,colorinlistoftodos]{todonotes}
+  }
+}
+
+%%% Todo-Notes Einstelleungen
+\presetkeys{todonotes}{fancyline, inline, color=red!60}{}
+\newcommand{\frage}[1]{\todo[color=green!40,fancyline,inline]{Frage: #1}}
+\newcommand{\notiz}[1]{\todo[color=yellow!40,fancyline,inline]{Notiz: #1}}
+%%%
+
+\endinput

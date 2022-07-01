@@ -1,0 +1,262 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{theorem_boxed}
+
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{stmaryrd}
+
+
+
+\RequirePackage[amsmath, amsthm, thmmarks, framed]{ntheorem}
+
+
+
+\RequirePackage{tikz}
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage{etoolbox} %für enclosebox
+
+%%%%
+%Namen abhängig von der Sprache
+
+
+\newcommand{\thbox@newlanguagecommand}[1]{%
+  \newcommand#1{%
+    \@ifundefined{\string#1\languagename}
+      {``No def of \texttt{\string#1} for \languagename''}
+      {\@nameuse{\string#1\languagename}}%
+  }%
+}
+\newcommand{\thbox@addtolanguagecommand}[3]{%
+  \@namedef{\string#1#2}{#3}}
+
+
+  %Definition
+  \thbox@newlanguagecommand{\Case@name}
+  \thbox@addtolanguagecommand{\Case@name}{ngerman}{Fall}
+  \thbox@addtolanguagecommand{\Case@name}{german}{Fall}
+  \thbox@addtolanguagecommand{\Case@name}{english}{Case}
+
+  %Definition
+  \thbox@newlanguagecommand{\Def@name}
+  \thbox@addtolanguagecommand{\Def@name}{ngerman}{Definition}
+  \thbox@addtolanguagecommand{\Def@name}{german}{Definition}
+  \thbox@addtolanguagecommand{\Def@name}{english}{Definition}
+
+  %Beispiel
+  \thbox@newlanguagecommand{\Bsp@name}
+  \thbox@addtolanguagecommand{\Bsp@name}{ngerman}{Beispiel}
+  \thbox@addtolanguagecommand{\Bsp@name}{german}{Beispiel}
+  \thbox@addtolanguagecommand{\Bsp@name}{english}{Example}
+
+  %Bemerkung
+  \thbox@newlanguagecommand{\Bem@name}
+  \thbox@addtolanguagecommand{\Bem@name}{ngerman}{Bemerkung}
+  \thbox@addtolanguagecommand{\Bem@name}{german}{Bemerkung}
+  \thbox@addtolanguagecommand{\Bem@name}{english}{Remark}
+
+  %Satz
+  \thbox@newlanguagecommand{\Sa@name}
+  \thbox@addtolanguagecommand{\Sa@name}{ngerman}{Satz}
+  \thbox@addtolanguagecommand{\Sa@name}{german}{Satz}
+  \thbox@addtolanguagecommand{\Sa@name}{english}{Theorem}
+
+  %Lemma
+  \thbox@newlanguagecommand{\Lem@name}
+  \thbox@addtolanguagecommand{\Lem@name}{ngerman}{Lemma}
+  \thbox@addtolanguagecommand{\Lem@name}{german}{Lemma}
+  \thbox@addtolanguagecommand{\Lem@name}{english}{Lemma}
+
+  %Korollar
+  \thbox@newlanguagecommand{\Ko@name}
+  \thbox@addtolanguagecommand{\Ko@name}{ngerman}{Korollar}
+  \thbox@addtolanguagecommand{\Ko@name}{german}{Korollar}
+  \thbox@addtolanguagecommand{\Ko@name}{english}{Corollary}
+
+  %Ergänzung
+  \thbox@newlanguagecommand{\Erg@name}
+  \thbox@addtolanguagecommand{\Erg@name}{ngerman}{Ergänzung}
+  \thbox@addtolanguagecommand{\Erg@name}{german}{Ergänzung}
+  \thbox@addtolanguagecommand{\Erg@name}{english}{Addition}
+
+%%%
+
+\theoremstyle{marginbreak}
+\theorembodyfont{\normalfont}
+\theoremheaderfont{\normalfont\bfseries}
+\theorempostskip{1cm}
+
+
+\newtheorem{dummy@Thbox}{dummy}[chapter]
+
+
+\newtheorem{Bsp}[dummy@Thbox]{\Bsp@name}
+\newtheorem{Bem}[dummy@Thbox]{\Bem@name}
+
+\theoremstyle{margin}
+
+
+\newtheorem{Bsp_noBreak}[dummy@Thbox]{\Bsp@name}
+\newtheorem{Bem_noBreak}[dummy@Thbox]{\Bem@name}
+
+
+\usetikzlibrary{shadows}
+
+
+\definecolor{topColor}{RGB}{237,237,237}
+\definecolor{botColor}{RGB}{242,242,242}
+\definecolor{shaColor}{RGB}{5,5,5}
+\definecolor{borderColor}{RGB}{0,0,0}
+\definecolor{DefbarColor}{HTML}{00549f}
+\definecolor{ErgbarColor}{RGB}{158,8,21}
+
+\theoremclass{dummy@Thbox}
+\theorempostskip{0pt}
+\theoreminframepreskip{0pt}
+\theoreminframepostskip{0pt}
+\theoremframepreskip{1cm}
+\theoremframepostskip{0.5cm}
+\theoremstyle{changebreak}
+
+
+\newtheorem{Sa}[dummy@Thbox]{\Sa@name}
+\newtheorem{Lem}[dummy@Thbox]{\Lem@name}
+\newtheorem{Ko}[dummy@Thbox]{\Ko@name}
+\newtheorem{Def}[dummy@Thbox]{\Def@name}
+
+\pgfdeclarehorizontalshading{thmbackground}{100bp}
+{color(0bp)=(topColor); color(100bp)=(botColor)}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Sa}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Lem}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Ko}
+
+\surroundwithmdframed[skipabove=\topsep,
+skipbelow=\topsep,
+innertopmargin=0pt,
+innerbottommargin=4pt,
+leftmargin=-13pt,
+splitbottomskip=0ex,
+splittopskip=0ex,
+topline=false,
+leftline=true,
+bottomline=false,
+rightline=false,
+innerrightmargin=0pt,
+innerlinewidth=2pt,
+font=\normalfont,
+linecolor=DefbarColor,]{Def}
+
+\theoremstyle{change}
+
+\newtheorem{Sa_noBreak}[dummy@Thbox]{\Sa@name}
+\newtheorem{Lem_noBreak}[dummy@Thbox]{\Lem@name}
+\newtheorem{Ko_noBreak}[dummy@Thbox]{\Ko@name}
+\newtheorem{Def_noBreak}[dummy@Thbox]{\Def@name}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Sa_noBreak}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Lem_noBreak}
+
+\surroundwithmdframed[linecolor=borderColor,linewidth=1pt, apptotikzsetting={\tikzset{mdfbackground/.append style ={%
+shading = thmbackground}}},shadow=true,shadowsize=5pt,shadowcolor=black!50,roundcorner=1.5pt]{Ko_noBreak}
+
+\surroundwithmdframed[skipabove=\topsep,
+skipbelow=\topsep,
+innertopmargin=0pt,
+innerbottommargin=4pt,
+leftmargin=-13pt,
+splitbottomskip=0ex,
+splittopskip=0ex,
+topline=false,
+leftline=true,
+bottomline=false,
+rightline=false,
+innerrightmargin=0pt,
+innerlinewidth=2pt,
+font=\normalfont,
+linecolor=DefbarColor,]{Def_noBreak}
+
+\theoremstyle{break}
+
+
+
+
+\newtheorem{Erg}{\Erg@name}
+
+\surroundwithmdframed[skipabove=\topsep,
+skipbelow=\topsep,
+innertopmargin=0pt,
+innerbottommargin=4pt,
+leftmargin=-13pt,
+splitbottomskip=0ex,
+splittopskip=0ex,
+topline=false,
+leftline=true,
+bottomline=false,
+rightline=false,
+innerrightmargin=0pt,
+innerlinewidth=2pt,
+font=\normalfont,
+linecolor=ErgbarColor,]{Erg}
+
+
+\theoremstyle{change}
+
+\newtheorem{Erg_noBreak}[Erg]{\Erg@name}
+
+
+\surroundwithmdframed[skipabove=\topsep,
+skipbelow=\topsep,
+innertopmargin=0pt,
+innerbottommargin=4pt,
+leftmargin=-13pt,
+splitbottomskip=0ex,
+splittopskip=0ex,
+topline=false,
+leftline=true,
+bottomline=false,
+rightline=false,
+innerrightmargin=0pt,
+innerlinewidth=2pt,
+font=\normalfont,
+linecolor=ErgbarColor,]{Erg_noBreak}
+
+
+\theoremprework{%
+  \setlength\theorempostskipamount{3.5ex}
+}
+
+
+\newtheoremstyle{case}%
+  {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont
+          ##1\ ##2\theorem@separator}\hbox{\strut}}}]\quote}%
+  {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont
+          ##1\ ##2\ (##3)\theorem@separator}\hbox{\strut}}}]\quote}
+
+
+\theoremstyle{case}
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\newtheorem{fall}{\Case@name}
+
+\theoremstyle{nonumberbreak}
+\theoremsymbol{\ensuremath{\square}}
+\theorembodyfont{}
+\theoremheaderfont{\itshape}
+\theoremseparator{:}
+\theoremprework{\setcounter{fall}{0}}
+\theorempostwork{\setcounter{fall}{0}}
+\renewtheorem{proof}{\proofname}
+
+\newtheorem{refproof}{\proofname}
+
+%

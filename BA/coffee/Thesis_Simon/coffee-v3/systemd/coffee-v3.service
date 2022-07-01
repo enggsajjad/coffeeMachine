@@ -1,0 +1,15 @@
+[Unit]
+Description=coffee-v3
+
+[Service]
+User=pi
+Environment="DISPLAY=:0"
+Environment="XDG_DATA_DIRS=/usr/local/share:/usr/share/raspi-ui-overrides:/usr/share:/usr/share/gdm:/var/lib/menu-xdg"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+Environment="XAUTHORITY=/home/pi/.Xauthority"
+WorkingDirectory=/home/pi/coffee-v3/Thesis_Simon/coffee-v3
+ExecStart=/usr/bin/python3 src/main.py
+Restart=always
+
+[Install]
+WantedBy=graphical.target

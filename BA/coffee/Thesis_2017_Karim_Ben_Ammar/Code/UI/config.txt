@@ -1,0 +1,4 @@
+Water switch : 35, IN
+Water flow 1 : 29, IN
+Water flow 2 : 31, IN
+Grinder : 33, IN

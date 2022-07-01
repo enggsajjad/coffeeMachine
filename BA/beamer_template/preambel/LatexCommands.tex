@@ -1,0 +1,66 @@
+%!TeX spellcheck = de-DE
+
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\T}{T}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\GLp}{GL^+}
+\DeclareMathOperator{\conv}{conv}
+%\DeclareMathOperator{\ker}{ker}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\rang}{rang}
+\newcommand{\D}{\text{D}}
+
+\newcommand{\QR}[2]{{ \left. \raisebox{0.2\height}{\ensuremath{#1}} \middle \diagup \raisebox{-0.2\height}{\ensuremath{#2}} \right. }}
+
+
+% einige Abkuerzungen
+\newcommand{\C}{\mathbb{C}} % komplexe
+\newcommand{\K}{\mathbb{K}} % komplexe
+\newcommand{\R}{\mathbb{R}} % reelle
+\newcommand{\Q}{\mathbb{Q}} % rationale
+\newcommand{\Z}{\mathbb{Z}} % ganze
+\newcommand{\N}{\mathcal{N}} % Normalenraum
+
+\NewDocumentCommand\set{d<>m}{
+  \left\lbrace{} #2 %
+  \IfValueTF{#1}{
+    \;\middle|\; #1%
+  }{
+    %
+  }
+  \right\rbrace{}%
+}
+
+
+
+
+\makeatletter
+
+\newcommand\frontmatter{%
+    \cleardoublepage
+  %\@mainmatterfalse
+  \pagenumbering{roman}}
+
+\newcommand\mainmatter{%
+    \cleardoublepage
+ % \@mainmattertrue
+  \pagenumbering{arabic}}
+
+\newcommand\backmatter{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+ % \@mainmatterfalse
+   }
+
+\makeatother

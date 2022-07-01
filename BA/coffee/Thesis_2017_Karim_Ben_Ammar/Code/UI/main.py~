@@ -1,0 +1,66 @@
+import sys
+ 
+import PyQt5
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QIcon
+import coffeeTimeTest_auto
+
+class MainWindow(QMainWindow, coffeeTimeTest_auto.Ui_MainWindow):
+ #def showMenu(self):
+  #if self.menu_pressed:
+   #self.menu.hide()
+   #self.menu_pressed = False
+   #self.menuButton.setGeometry(0, 0, 41, 41)
+  #else :
+   #self.menu.show()
+   #self.menu_pressed = True
+   #self.menuButton.setGeometry(141, 0, 41, 41)
+
+ def exitApp(self):
+  QApplication.quit()
+
+ def loadPage(self, page):
+  if page is "order":
+   self.stackedWidget.setCurrentIndex(0)
+  elif page is "android":
+   self.stackedWidget.setCurrentIndex(1)
+  elif page is "adminLogin":
+   self.stackedWidget.setCurrentIndex(2)
+  elif page is "settings":
+   self.stackedWidget.setCurrentIndex(3)
+  elif page is "admin":
+   self.stackedWidget.setCurrentIndex(4)
+  elif page is "accounting":
+   self.stackedWidget.setCurrentIndex(5)
+  elif page is "entertainement":
+   self.stackedWidget.setCurrentIndex(6)
+ 
+ def __init__(self):
+  super(self.__class__, self).__init__()
+  self.setupUi(self)
+  self.mainMenu.clicked.connect(lambda : self.loadPage("order"))
+  self.androidMenu.clicked.connect(lambda : self.loadPage("android"))
+  self.adminMenu.clicked.connect(lambda : self.loadPage("adminLogin"))
+  self.accountingMenu.clicked.connect(lambda : self.loadPage("accounting"))
+  self.entertainementMenu.clicked.connect(lambda : self.loadPage("entertainement"))  
+
+  order = self.stackedWidget.widget(0)
+  order.asignal.connect(lambda : self.loadPage("settings"))
+  settings = self.stackedWidget.widget(3)
+  settings.asignal.connect(lambda : self.loadPage("order"))
+  admin = self.stackedWidget.widget(2)
+  admin.asignal.connect(lambda : self.loadPage("admin"))
+  adminPage = self.stackedWidget.widget(4)
+  adminPage.asignal.connect(lambda : self.exitApp())
+  #self.menu_pressed = True
+  #self.menuButton.clicked.connect(lambda : self.showMenu())
+
+
+def main():
+ app = QApplication(sys.argv)
+ form = MainWindow()
+ form.showFullScreen()
+ sys.exit(app.exec_())
+ 
+if __name__ == "__main__":
+ main()

@@ -1,0 +1,199 @@
+
+%%
+%% RWTH Beamer Theme (layout based on RWTH PowerPoint template)
+%% by Georg Wassen, Lehrstuhl für Betriebssysteme, 2013
+%%    wassen@lfbs.rwth-aachen.de
+%% with modifications by Gerrit Toehgiono, Mentoring Informatik, 2016-2018
+%% to match the "current old" RWTH template
+%%
+%% The templates are derived from the beamer documentation and the provided templates,
+%% hence, the same licence applies:
+%%
+%% ----------------------------------------------------------------
+%% |  This file may be distributed and/or modified                |
+%% |                                                              |
+%% |  1. under the LaTeX Project Public License and/or            |
+%% |  2. under the GNU Public License.                            |
+%% |                                                              |
+%% |  See the file doc/licenses/LICENSE for more details.         |
+%% ----------------------------------------------------------------
+%%
+%% Version 0.1    20.12.2012    Initial presentation using this theme
+%% Version 0.2    08.01.2013    Extracted layout and some example slides
+%% Version 0.3    12.01.2013    Improved handling of \subsection (used as frame title),
+%%                              Support institute's logo
+%% Version 0.4    22.01.2013    Improved spacing between lines in header & footer
+%% Version 0.5    01.02.2013    No right sidebar: set width correctly
+%% Version 1.0    06.03.2014    Initial Tag on GitHub
+%%
+%% Version 1.1    31.03.2018    Modifications for CS Mentoring
+%%
+%% TODO
+%%  - copyright of slides?
+%%  - count slides with same subsection (needs probably overloading \subsection) and print: 1/N
+%%    (needs to count the number of frames in each subsection)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Select input file encoding:
+%%   utf8   - UTF-8, nowadays standard on most operating sytems
+%%   latin1 - ISO-8859-1
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Select language
+%%
+\usepackage[ngerman]{babel}        % Deutsch, neue Rechtschreibung
+%\usepackage[english]{babel}       % English
+
+\usetheme{rwth}
+\usepackage[T1]{fontenc}           % Font encoding (don't change!)
+\usepackage{lmodern}               % Select Linux Modern Fonts (don't change)
+\usepackage{sansmathfonts}         % Sans fonts in math environments
+\usepackage{textcomp}              % fix 'missing font symbols' warning
+\renewcommand{\rmdefault}{phv}     % Arial like (Helvetica)
+\renewcommand{\sfdefault}{phv}     % Arial like (Helvetica)
+
+%% graphics related packages
+\usepackage{graphicx}              % needed to include graphics (don't change)
+\usepackage[encoding,filenameencoding=utf8]{grffile} % allow utf8 file names in graphics
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% import packages for content
+%%
+\usepackage{listings}                           % for lstlisting and \lstinline|..|
+%% TikZ can be used to /program/ graphics.
+
+%% some TikZ-libraries and settings for the examples...
+\usetikzlibrary{shadings}           % GW: color gradients
+\usetikzlibrary{arrows,calc,positioning,fit,matrix,shadows,chains,arrows,shapes,spy,fadings}
+\usetikzlibrary{pgfplots.units,shapes.symbols,shapes.arrows}
+\usetikzlibrary{knots,hobby, decorations.pathreplacing} % für Knotendiagramme
+\include{my_includes}
+
+%für Notizen
+\usepackage{pgfpages}
+%\usepackage{pdfpc-commands} %für Videos
+\usepackage{multimedia} % für Videos
+
+
+%\usepackage{ngerman}
+\usepackage{amsmath}
+%\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{faktor} % für Quotientenräume
+
+\usepackage{subcaption} %für Subfigure
+\usepackage{xparse} % für NewDocumentCommand
+
+
+
+%\usepackage[german]{todonotes}
+%\usepackage[disable]{todonotes}
+%%% todo mit Liste, da todo-notes liste nicht mit beamer kompatibel
+\usepackage{tcolorbox}
+
+%\newcounter{todo}
+\newtcbox{\mytodobox}{colback=orange,colframe=orange!75!black}
+
+\newcommand\todo[1]{%
+    %\refstepcounter{todo}
+	%\mytodobox{\hypertarget{todo\thetodo}{#1}}
+	\mytodobox{#1}
+    %\addcontentsline{tod}{subsection}{\protect\hyperlink{todo\thetodo}{\thetodo~#1}\par}
+}%
+
+\makeatletter
+\newcommand\listoftodos{%
+    \@starttoc{tod}}
+\makeatother
+%%% Todo
+
+\usepackage{import}
+\usepackage{autonum}
+\usepackage{ifthen}
+
+\usepackage{cleveref}
+\input{../preambel/cleverrefconfig.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Größere Seitenvorschau in Notizen
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\VorschauHoehe}{0.50} %Prozent zur Höhe der gesamten Notizseite
+\makeatletter
+\defbeamertemplate{note page}{infolines}
+{%
+  {%
+    \scriptsize
+    \insertvrule{\VorschauHoehe \paperheight}{white!90!black}
+    \vskip- \VorschauHoehe \paperheight
+    \nointerlineskip
+    \vbox{
+      \hfill\insertslideintonotes{\VorschauHoehe}\hskip-\Gm@rmargin\hskip0pt%
+      \vskip-\VorschauHoehe\paperheight%
+      \nointerlineskip
+      \begin{pgfpicture}{0cm}{0cm}{0cm}{0cm}
+        \begin{pgflowlevelscope}{\pgftransformrotate{90}}
+          {\pgftransformshift{\pgfpoint{-2cm}{0.2cm}}%
+          \pgftext[base,left]{\footnotesize\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}}
+        \end{pgflowlevelscope}
+      \end{pgfpicture}}
+    \nointerlineskip
+    \vbox to \VorschauHoehe \paperheight{\vskip0.5em
+      \hbox{\insertshorttitle[width=8cm]}%
+      \setbox\beamer@tempbox=\hbox{\insertsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertsubsection}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip17.4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsubsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertshortframetitle}%
+      \hbox{\ifdim\wd\beamer@tempbox>1pt{\hskip30.8pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\insertshortframetitle[width=7cm]}\fi%
+      }%
+      \vfil}%
+  }%
+  \vskip.25em
+  \nointerlineskip
+  \begin{minipage}{\textwidth} % this is an addition
+  \insertnote
+  \end{minipage}               % this is an addition
+}
+\makeatother
+
+\setbeamertemplate{note page}[infolines]
+%%%
+
+%Benutze
+%\note{\trickdown \begin{enumerate}
+%  \item< 1-> ...
+%\end{enumerate}}
+
+\makeatletter
+    \newcommand{\trickdown}{%
+        \advance\beamer@slideinframe by-1%
+     }%
+
+     \newcommand{\trickup}{%
+         \advance\beamer@slideinframe by+1%
+      }%
+\makeatother
+
+
+\input{../preambel/LatexCommands}
+
+% include config
+\input{my_config}
+\input{beamer_theorems}
+
+% disable PDF navigation icons
+\setbeamertemplate{navigation symbols}{}
+\pgfplotsset{compat=1.15}

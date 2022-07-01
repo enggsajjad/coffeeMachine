@@ -1,0 +1,117 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "make draft",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "draft"
+            ]
+        },
+        {
+            "name": "make DRAFT",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "DRAFT"
+            ]
+        },
+        {
+            "name": "make",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "normal"
+            ]
+        },
+        {
+            "name": "make handout",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "handout"
+            ]
+        },
+        {
+            "name": "make handnotes",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "handnotes"
+            ]
+        },
+        {
+            "name": "make nonotes",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "nonotes"
+            ]
+        },
+        {
+            "name": "make allBeamer",
+            "command": "make",
+            "args":[
+                "--directory=%DIR%",
+                "allBeamer"
+            ]
+        },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "make draft",
+            "tools":[
+                "make draft"
+            ]
+        },
+        {
+            "name": "make DRAFT",
+            "tools":[
+                "make DRAFT"
+            ]
+        },
+        {
+            "name": "make",
+            "tools":[
+                "make"
+            ]
+        },
+        {
+            "name": "make handout",
+            "tools":[
+                "make handout"
+            ]
+        },
+        {
+            "name": "make handnotes",
+            "tools":[
+                "make handnotes"
+            ]
+        },
+        {
+            "name": "make nonotes",
+            "tools":[
+                "make nonotes"
+            ]
+        },
+        {
+            "name": "make all Beamer",
+            "tools":[
+                "make allBeamer"
+            ]
+        },
+    ],
+    // If you want the external viewer to be default, uncomment the next line
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.synctex.synctexjs.enabled": false,
+    "latex-workshop.view.pdf.ref.viewer": "external",
+    // "latex-workshop.view.pdf.external.viewer.command": "evince",
+    // "latex-workshop.view.pdf.external.viewer.args": [
+    //     "--unique",
+    //     "%PDF%"
+    // ]
+
+}

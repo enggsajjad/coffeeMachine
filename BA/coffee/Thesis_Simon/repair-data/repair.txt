@@ -1,0 +1,14 @@
+local db on raspberrypi
+sql> SELECT * FROM coffee.orders where id >= 10 and id <= 277 and uid != 0123;
+
+server
+sql> SELECT * FROM coffee.protokoll where id >= 20643 and id <= 20974 and Kommentar like '%rfid%' and UserID != 124;
+
+count = 255
+
+transform:
+
+
+coffee = 1 & milk = 0 -> Kommentar = Buy (rfid) Black Coffee; ActionID = 1; value = -price
+
+coffee = 0 -> Kommentar = Buy (rfid) Hot Water; ActionID = 3; value = -price

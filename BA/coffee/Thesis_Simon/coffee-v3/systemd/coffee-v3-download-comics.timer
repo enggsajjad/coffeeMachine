@@ -1,0 +1,8 @@
+[Unit]
+Description=Run download-comics daily at 3am
+
+[Timer]
+OnCalendar=*-*-* 3:00:00
+
+[Install]
+WantedBy=timers.target

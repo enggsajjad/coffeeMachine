@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \node[inner sep=0pt] (cm) at (0,0)
+    {\includegraphics[width=.2\textwidth]{images/coffeeMachine.png}};
+    \node[inner sep=0pt] (pi) at (5,0)
+    {\includegraphics[width=.25\textwidth]{images/raspberry.jpg}};
+    \node[inner sep=0pt] (rfid) at (9,0)
+    {\includegraphics[width=.2\textwidth]{images/rfid.jpg}};
+    \node[inner sep=0pt,outer sep=2pt] (buzzer) at (5,-2.5)
+    {\includegraphics[width=.1\textwidth]{images/LK-Buzzer-1.png}};
+    \node[rectangle,draw] (tag) at (9,-2.0) {RFID tag};
+    \node[inner sep=0pt] (touch) at (5,2.5)
+    {\includegraphics[width=.2\textwidth]{images/touchscreen.png}};
+    \node[inner sep=0pt] (screen) at (5,2.93)
+    {\includegraphics[width=.15\textwidth]{../thesis/images/order_page.png}};
+    \node[rectangle,rounded corners,draw,fill=KITgreen50,align=center,outer sep=2pt] (server) at (9,2.5) {Accounting \\ Server};
+
+    \path[thick,fill=green]
+    (pi) edge [<-] node {} (rfid)
+    edge [<->] node {} (touch)
+    edge [->] node {} (buzzer)
+    edge [<->] node[right=1mm] {HTTP} (server)
+    edge [<->] node[fill=white,rectangle,draw,align=left] {Adapter \\ Board} (cm)
+    (rfid) edge [<-] (tag)
+    ;
+\end{tikzpicture}

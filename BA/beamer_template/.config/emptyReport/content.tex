@@ -1,0 +1,53 @@
+\fontfamily{lmr}
+\frontmatter
+
+\begin{titlepage}
+	\centering
+	\vspace{2cm}
+	{\LARGE Vorlesungsmitschrift \par}
+	\vspace{1.5cm}
+	{\Huge\bfseries \mytitle \par}
+	\vspace{3.5cm}
+	{\Large gehalten von Priv.-Doz. Dr. Alfred Wagner\par Wintersemester 2017/2018}
+	\vfill
+	\large  von Pascal Ziegler
+	\vfill
+
+	% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+%\maketitle{\thispagestyle{empty}}
+
+\newpage\thispagestyle{empty}~%leere Seite nach der Titelseite (für doppelseitigen Druck)
+
+\newpage
+\begin{large}
+	\tableofcontents
+\end{large}
+
+
+\newpage
+
+
+\listoftodos
+
+
+
+\mainmatter
+
+
+\inputpythontikz{ex2}
+
+	
+\backmatter
+	
+
+% Literaturliste soll im Inhaltsverzeichnis auftauchen
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Literatur}
+
+% Literaturliste endgueltig anzeigen
+\bibliography{literatur}
+\bibliographystyle{natdin}

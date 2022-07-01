@@ -1,0 +1,21 @@
+%!TEX root = slides_DRAFT.tex
+%!TeX spellcheck = de-DE
+
+\documentclass[notheorems]{beamer}
+
+\usepackage[extdir=myextdir,pictdir=../myfigs,pictprefix=fig,
+plotdir=../myplots,plotprefix=plt,datadir=../mydata,dataprefix=dat,
+vectoroutdir=../BuildGraphics,epsdir=../VectorGraphics,svgdir=../VectorGraphics,
+pythondir=../python,pythonoutdir=../pythontikz,beamer=true]{MakeSupport}
+
+
+\input{preambel.tex}
+
+\setbeameroption{show notes on second screen=right}
+\setbeameroption{second mode text on second screen} % um Videos auf notizseiten zu verhindern
+
+\begin{document}
+
+	\input{content.tex}
+
+\end{document}

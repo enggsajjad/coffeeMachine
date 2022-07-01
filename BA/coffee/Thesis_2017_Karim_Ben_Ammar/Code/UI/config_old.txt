@@ -1,0 +1,9 @@
+Gear switch home pos : 33, IN
+Gear switch brew pos : 29, IN
+Hot water/ Steam switch : 7, IN
+Brew unit : 11, IN
+Dregs drawer : 13, IN
+Doser switch : 35, IN
+Reed switch water level : 31, IN
+Flow meter system 2 : 3, IN
+Flow meter system 1 : 5, IN

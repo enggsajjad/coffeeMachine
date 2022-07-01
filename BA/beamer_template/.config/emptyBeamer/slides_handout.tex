@@ -1,0 +1,69 @@
+%!TEX root = slides_handout.tex
+%!TeX spellcheck = de-DE
+
+
+\documentclass[handout,notheorems]{beamer}
+
+
+\usepackage[extdir=myextdir,pictdir=../myfigs,pictprefix=fig,
+plotdir=../myplots,plotprefix=plt,datadir=../mydata,dataprefix=dat,
+vectoroutdir=../BuildGraphics,epsdir=../VectorGraphics,svgdir=../VectorGraphics,
+pythondir=../python,pythonoutdir=../pythontikz,beamer=true]{MakeSupport}
+
+
+\input{preambel.tex}
+
+	\pgfpagesdeclarelayout{4 on 1 boxed}
+	{
+	\edef\pgfpageoptionheight{\the\paperheight}
+	\edef\pgfpageoptionwidth{\the\paperwidth}
+	\edef\pgfpageoptionborder{0pt}
+	}
+	{
+	\pgfpagesphysicalpageoptions
+	{%
+		logical pages=4,%
+		physical height=\pgfpageoptionheight,%
+		physical width=\pgfpageoptionwidth%
+	}
+	\pgfpageslogicalpageoptions{1}
+	{%
+		border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.5\pgfphysicalheight,%
+		center=\pgfpoint{.25\pgfphysicalwidth}{.75\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{2}
+	{%
+		border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.5\pgfphysicalheight,%
+		center=\pgfpoint{.75\pgfphysicalwidth}{.75\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{3}
+	{%
+		border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.5\pgfphysicalheight,%
+		center=\pgfpoint{.25\pgfphysicalwidth}{.25\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{4}
+	{%
+		border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.5\pgfphysicalheight,%
+		center=\pgfpoint{.75\pgfphysicalwidth}{.25\pgfphysicalheight}%
+	}%
+	}
+	\setbeameroption{hide notes}
+	\pgfpagesuselayout{4 on 1 boxed}[a4paper,landscape,border shrink=5mm]
+
+\begin{document}
+
+	\input{content.tex}
+
+\end{document}

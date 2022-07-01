@@ -1,0 +1,43 @@
+%\makeatletter
+%\let\th@plain\relax
+%\makeatother
+
+%\setbeamertemplate{theorems}[numbered] % to number
+\setbeamertemplate{theorems}[ams style]
+
+%%\usepackage{ntheorem} %nicht kompatibel mit uncover
+\usepackage{amsthm}
+%\theoremstyle{break}
+
+%\newtheoremstyle{mybreak}%
+%{0pt}{0pt}{\normalfont}%
+%{}{\bfseries\color{rwthblue}}{}{\newline}%
+%{}
+
+\newtheoremstyle{mystyle}%                % Name
+  {1pt}%                                     % Space above
+  {3pt}%                                     % Space below
+  {}%                                     % Body font
+  {}%                                     % Indent amount
+  {\color{rwthblue}}%                            % Theorem head font
+  {}%                                    % Punctuation after theorem head
+  {\newline}%                                    % Space after theorem head, ' ', or \newline
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% 
+
+\theoremstyle{mystyle}
+
+%\theorembodyfont{\normalfont}
+%\theoremheaderfont{\color{rwthblue}\bfseries}
+
+\newtheorem*{Sa}{Theorem}
+\newtheorem*{Def}{Definition}
+\newtheorem*{Ko}{Korollar}
+\newtheorem{Lem}{Lemma}
+\newtheorem*{Bem}{Bemerkung}
+
+%% um Beweise über mehrere Folien zu machen
+\newtheorem*{bewfort}{Beweis (Forsetzung)}
+\newtheorem*{bewanf}{Beweis}
+\newenvironment{bewend}{\begin{bewfort}}{\hfill $\square$ \end{bewfort}}
+\newenvironment{bew}{\begin{bewanf}}{\hfill $\square$ \end{bewanf}}
+%%%%%

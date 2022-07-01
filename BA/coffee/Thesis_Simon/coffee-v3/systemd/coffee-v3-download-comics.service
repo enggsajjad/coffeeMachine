@@ -1,0 +1,7 @@
+[Unit]
+Description=Download comics for coffee-v3
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/coffee-v3/Thesis_Simon/coffee-v3
+ExecStart=/usr/bin/python3 src/download_comics.py

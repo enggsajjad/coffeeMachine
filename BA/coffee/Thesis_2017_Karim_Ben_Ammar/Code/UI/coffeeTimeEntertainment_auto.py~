@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'CoffeeTimeEntertainment.ui'
+#
+# Created: Sun Dec 18 22:24:30 2016
+#      by: PyQt5 UI code generator 5.2.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(659, 480)
+  
+        self.nextButton = QtWidgets.QCommandLinkButton(Dialog)
+        self.nextButton.setGeometry(QtCore.QRect(610, 30, 41, 41))
+        self.nextButton.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../res/nextIcon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.nextButton.setIcon(icon)
+        self.nextButton.setIconSize(QtCore.QSize(30, 30))
+        self.nextButton.setObjectName("nextButton")
+        self.predButton = QtWidgets.QCommandLinkButton(Dialog)
+        self.predButton.setGeometry(QtCore.QRect(10, 30, 41, 41))
+        self.predButton.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../res/backIcon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.predButton.setIcon(icon1)
+        self.predButton.setIconSize(QtCore.QSize(30, 30))
+        self.predButton.setObjectName("predButton")
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+

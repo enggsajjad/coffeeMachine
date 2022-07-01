@@ -1,0 +1,34 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.autoComplete.extraPaths": [
+        "./coffee/Thesis_Simon/coffee-v3/src",
+        "./coffee/Thesis_Simon/coffee-v3/src/gui"
+    ],
+    "python.linting.pylintUseMinimalCheckers": false,
+    "search.exclude": {
+        "**/Thesis_Karim": true
+    },
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 30,
+            "database": "coffee",
+            "dialect": "MySQL",
+            "name": "coffee",
+            "password": "root",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root"
+        },
+        {
+            "database": "coffee",
+            "dialect": "MariaDB",
+            "name": "real-coffee",
+            "password": "root",
+            "port": 3307,
+            "server": "localhost",
+            "username": "root"
+        }
+    ],
+    "cSpell.language": "de,en"
+}

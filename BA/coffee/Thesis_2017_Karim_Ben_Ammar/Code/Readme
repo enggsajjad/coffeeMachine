@@ -1,0 +1,15 @@
+Change admin password : /CoffeeMAchine/UI/coffeetimeadminlogin.py
+New PCB :
+    1) change the config file under : ~/CoffeeMachine/UI/config.txt (config_old.txt can be used with the new pcb)
+    2) update the grinder, water level, water flow pins in : ~/CoffeeMachine/UI/inputGPIO.py
+
+Database :
+    - Username : root
+    - Password : root
+    - Name : coffee_time
+To move to a new Raspberry Pi :
+    1) copy the CoffeeMachine folder
+    2) copy the downloadPictures script from the ~/Pictures folder
+    3) copy the restart.sh and dailyRestart.sh from the home folder
+    4) create cron job for restart, dailyRestart, and the downloadPictures scripts
+    5) create logs folder in home

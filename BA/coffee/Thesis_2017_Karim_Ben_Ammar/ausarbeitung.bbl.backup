@@ -1,0 +1,31 @@
+\begin{thebibliography}{}
+
+\bibitem{BachelorThesis} 
+Tobias Modschiedler. 
+\textit{Upgrading an off-the-shelf coffee machine with RFID-based access control}. 
+2014.
+\bibitem{Saeco} 
+Saeco International Group.
+\textit{saeco royal teh list : Service manual}.
+(2003). URL : \url{http://expert-cm.ru/images/stories/shemy_tehnich/saeco_royal_teh_list.pdf}
+\bibitem{powerConsumption}
+\textit{Raspberry pi power consumption}.
+URL : \url{https://www.pidramble.com/wiki/benchmarks/power-consumption}
+\bibitem{BDEW}
+\textit{BDEW Bundesverband der Energie- und Wasserwirtschaft e.V. BDEW-
+Strompreisanalyse Februar 2017.}
+\bibitem{SaecoPic}
+\textit{Saeco royal cappucino}. URL : \url{https://www.segafredo.com.au/product/saeco-royal-cappuccino/}
+\bibitem{touchScreen}
+\textit{Official Raspberry Pi 7\,'' touchscreen}.
+URL : \url{https://files1.element14.com/community/themes/images/raspberrypi/7inTScontents.jpg}
+\bibitem{raspberryPi3}
+\textit{Raspberry pi 3 model B}.
+URL : \url{https://www.raspberrypi.org/products/raspberry-pi-3-model-b/}
+\bibitem{gpioBoard}
+\textit{Raspberry Pi GPIO Board}.
+URL : \url{http://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/\#prettyPhoto/0/}
+\bibitem{rfidJoy}
+\textit{Joy-IT RFID-RC522 Module}.
+URL : \url{http://4.bp.blogspot.com/--ABDuudJrms/VmCqSnUZtdI/AAAAAAAAJfs/Jcp702CzI80/\\s1600/RC522.jpg}
+\end{thebibliography}

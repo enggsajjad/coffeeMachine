@@ -1,0 +1,57 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage[a4paper, left=3cm, right=2.5cm, top=3cm, bottom=3.5cm, twoside]{geometry}
+\usepackage{titlesec} %um Section-Überschriften anzupassen
+\usepackage{enumitem} % um Enumarate Zähler zu ändern
+
+
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+
+\usepackage{xparse}
+\usepackage{glossaries}
+\usepackage{theorem_boxed}
+\usepackage[round]{natbib} %für Zitate
+\usepackage{varioref}
+
+
+\usepackage{hyperref}
+
+
+\newcommand{\mytitle}{Geometrische Analysis III}%falls sich Titel ändert, muss er nur hier angepasst werden
+
+\author{Pascal Ziegler}
+
+\title{\mytitle}
+
+\date{\today}
+
+
+
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+
+\input{../preambel/LatexCommands}
+
+\usepackage[sort]{cleveref}%muss als letztes Paket eingebunden werden. Es muss noch konfiguriert werden
+\usepackage{autonum} % vergibt Equation-Nummern nur bei vorhandener referenz
+
+\input{../preambel/cleverrefconfig}
+
+\numberwithin{equation}{chapter} % Equation-Nummern pro Kaptiel/Abschnitt
+
+\makeglossaries
+
+%%Die benötigten Tikz-Libraries
+\usetikzlibrary{knots}
+\usetikzlibrary{hobby}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing} 

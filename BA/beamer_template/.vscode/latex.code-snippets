@@ -1,0 +1,254 @@
+{
+    "Satz": {
+        "prefix": "bSa",
+        "body": [
+            "\\begin{Sa}",
+            "\t$0${1:Satz}",
+            "\\end{Sa}"
+        ],
+        "description": "Satzumgebung ohne Namen"
+    },
+    "Satz mit Namen": {
+        "prefix": "bSaN",
+        "body": [
+            "\\begin{Sa}[${1:Name}]",
+            "\t$0${2:Satz}",
+            "\\end{Sa}"
+        ],
+        "description": "Satzumgebung mit Namen"
+    },
+    "Satz ohne Zeilenumbruch": {
+        "prefix": "bSanB",
+        "body": [
+            "\\begin{Sa_noBreak}",
+            "\t$0${1:Satz}",
+            "\\end{Sa_noBreak}"
+        ],
+        "description": "Satzumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Satz mit Namen ohne Zeilenumbruch": {
+        "prefix": "bSanBN",
+        "body": [
+            "\\begin{Sa_noBreak}[${1:Name}]",
+            "\t$0${2:Satz}",
+            "\\end{Sa_noBreak}"
+        ],
+        "description": "Satzumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Definition": {
+        "prefix": "bDe",
+        "body": [
+            "\\begin{Def]",
+            "\t$0${1:Definition}",
+            "\\end{Def}"
+        ],
+        "description": "Definitionsumgebung ohne Namen"
+    },
+    "Definition mit Namen": {
+        "prefix": "bDeN",
+        "body": [
+            "\\begin{Def}[${1:Name}]",
+            "\t$0${2:Definition}",
+            "\\end{Def}"
+        ],
+        "description": "Definitionsumgebung mit Namen"
+    },
+    "Definition ohne Zeilenumbruch": {
+        "prefix": "bDenB",
+        "body": [
+            "\\begin{Def_noBreak}",
+            "\t$0${1:Definition}",
+            "\\end{Def_noBreak}"
+        ],
+        "description": "Definitionsumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Definitions mit Namen ohne Zeilenumbruch": {
+        "prefix": "bDenBN",
+        "body": [
+            "\\begin{Def_noBreak}[${1:Name}]",
+            "\t$0${2Definition}",
+            "\\end{Def_noBreak}"
+        ],
+        "description": "Definitionsumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Korollar": {
+        "prefix": "bKo",
+        "body": [
+            "\\begin{Ko}",
+            "\t$0${1:Korollar}",
+            "\\end{Ko}"
+        ],
+        "description": "Korollarumgebung ohne Namen"
+    },
+    "Korollar mit Namen": {
+        "prefix": "bKoN",
+        "body": [
+            "\\begin{Ko}[${1:Name}]",
+            "\t$0${2:Korollar}",
+            "\\end{Ko}"
+        ],
+        "description": "Korollarumgebung mit Namen"
+    },
+    "Korollar ohne Zeilenumbruch": {
+        "prefix": "bKonB",
+        "body": [
+            "\\begin{Ko_noBreak}",
+            "\t$0${1:Korollar}",
+            "\\end{Ko_noBreak}"
+        ],
+        "description": "Korollarumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Korollar mit Namen ohne Zeilenumbruch": {
+        "prefix": "bKonBN",
+        "body": [
+            "\\begin{Ko_noBreak}[${1:Name}]",
+            "\t$0${2:Korollar}",
+            "\\end{Ko_noBreak}"
+        ],
+        "description": "Korollarumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Beispiel": {
+        "prefix": "bBsp",
+        "body": [
+            "\\begin{Bsp}",
+            "\t$0${1:Beispiel}",
+            "\\end{Bsp}"
+        ],
+        "description": "Beispielumgebung ohne Namen"
+    },
+    "Beispiel mit Namen": {
+        "prefix": "bBspN",
+        "body": [
+            "\\begin{Bsp}[${1:Name}]",
+            "\t$0${2:Beispiel}",
+            "\\end{Bsp}"
+        ],
+        "description": "Beispielumgebung mit Namen"
+    },
+    "Beispiel ohne Zeilenumbruch": {
+        "prefix": "bBspnB",
+        "body": [
+            "\\begin{Bsp_noBreak}",
+            "\t$0${1:Beispiel}",
+            "\\end{Bsp_noBreak}"
+        ],
+        "description": "Beispielumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Beispiel mit Namen ohne Zeilenumbruch": {
+        "prefix": "bBspnBN",
+        "body": [
+            "\\begin{Bsp_noBreak}[${1:Name}]",
+            "\t$0${2:Beispiel}",
+            "\\end{Bsp_noBreak}"
+        ],
+        "description": "Beispielumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Bemerkung": {
+        "prefix": "bBem",
+        "body": [
+            "\\begin{Bem}",
+            "\t$0${1:Bemerkung}",
+            "\\end{Bem}"
+        ],
+        "description": "Bemerkungumgebung ohne Namen"
+    },
+    "Bemerkung mit Namen": {
+        "prefix": "bBemN",
+        "body": [
+            "\\begin{Bem}[${1:Name}]",
+            "\t$0${2:Bemerkung}",
+            "\\end{Bem}"
+        ],
+        "description": "Bemerkungumgebung mit Namen"
+    },
+    "Bemerkung ohne Zeilenumbruch": {
+        "prefix": "bBemnB",
+        "body": [
+            "\\begin{Bem_noBreak}",
+            "\t$0${1:Bemerkung}",
+            "\\end{Bem_noBreak}"
+        ],
+        "description": "Bemerkungumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Bemerkung mit Namen ohne Zeilenumbruch": {
+        "prefix": "bBemnBN",
+        "body": [
+            "\\begin{Bem_noBreak}[${1:Name}]",
+            "\t$0${2:Bemerkung}",
+            "\\end{Bem_noBreak}"
+        ],
+        "description": "Bemerkungumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Lemma": {
+        "prefix": "bLem",
+        "body": [
+            "\\begin{Lem}",
+            "\t$0${1:Lemma}",
+            "\\end{Lem}"
+        ],
+        "description": "Lemmaumgebung ohne Namen"
+    },
+    "Lemma mit Namen": {
+        "prefix": "bLemN",
+        "body": [
+            "\\begin{Lem}[${1:Name}]",
+            "\t$0${2:Lemma}",
+            "\\end{Lem}"
+        ],
+        "description": "Lemmaumgebung mit Namen"
+    },
+    "Lemma ohne Zeilenumbruch": {
+        "prefix": "bLemnB",
+        "body": [
+            "\\begin{Lem_noBreak}",
+            "\t$0${1:Lemma}",
+            "\\end{Lem_noBreak}"
+        ],
+        "description": "Lemmaumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Lemma mit Namen ohne Zeilenumbruch": {
+        "prefix": "bLemnBN",
+        "body": [
+            "\\begin{Lem_noBreak}[${1:Name}]",
+            "\t$0${2:Lemma}",
+            "\\end{Lem_noBreak}"
+        ],
+        "description": "Lemmaumgebung mit Namen ohne Zeilenumbruch"
+    },
+    "Ergänzung": {
+        "prefix": "bErg",
+        "body": [
+            "\\begin{Erg}",
+            "\t$0${1:Ergänzung}",
+            "\\end{Erg}"
+        ],
+        "description": "Ergänzungumgebung ohne Namen"
+    },
+    "Ergänzung mit Namen": {
+        "prefix": "bErgN",
+        "body": [
+            "\\begin{Erg}[${1:Name}]",
+            "\t$0${2:Ergänzung}",
+            "\\end{Erg}"
+        ],
+        "description": "Ergänzungumgebung mit Namen"
+    },
+    "Ergänzung ohne Zeilenumbruch": {
+        "prefix": "bErgnB",
+        "body": [
+            "\\begin{Erg_noBreak}",
+            "\t$0${1:Ergänzung}",
+            "\\end{Erg_noBreak}"
+        ],
+        "description": "Ergänzungumgebung ohne Namen ohne Zeilenumbruch"
+    },
+    "Ergänzung mit Namen ohne Zeilenumbruch": {
+        "prefix": "bErgnBN",
+        "body": [
+            "\\begin{Erg_noBreak}[${1:Name}]",
+            "\t$0${2:Ergänzung}",
+            "\\end{Erg_noBreak}"
+        ],
+        "description": "Ergänzungumgebung mit Namen ohne Zeilenumbruch"
+    }
+}

@@ -1,0 +1,9 @@
+BuildGraphics/*
+pythontikz/*
+*.pdf
+*.aux
+*.log
+*.synctex
+*.texPart
+*.bak
+*.directory

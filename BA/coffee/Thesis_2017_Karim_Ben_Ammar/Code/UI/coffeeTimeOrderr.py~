@@ -1,0 +1,9 @@
+import sys
+ 
+# This gets the Qt stuff
+import PyQt5
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QDialog
+import CoffeeTimeOrderr_auto
+
+class CoffeeTimerOrder(QtGui.QDialog)

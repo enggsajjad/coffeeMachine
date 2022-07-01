@@ -1,0 +1,184 @@
+%%
+%% This is file `MakeSupport.sty',
+%%
+%% adapted from tikzmake.sty
+
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+\ProvidesPackage{MakeSupport}
+	[2012/12/19 v0.2]
+	
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\RequirePackage{ifpdf}
+\RequirePackage{kvoptions}
+\RequirePackage{import}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{transparent}
+\RequirePackage{ifthen}
+
+
+\DeclareBoolOption[false]{beamer}
+\DeclareStringOption[tikzext]{extdir}
+\DeclareStringOption[BuildGraphics]{vectoroutdir}
+\DeclareStringOption[VectorGraphics]{epsdir}
+\DeclareStringOption[VectorGraphics]{svgdir}
+\DeclareStringOption[eps]{buildepsprefix}
+\DeclareStringOption[svg]{buildsvgprefix}
+\DeclareStringOption[picts]{pictdir}
+\DeclareStringOption[]{pictprefix}
+\DeclareStringOption[plots]{plotdir}
+\DeclareStringOption[]{plotprefix}
+\DeclareStringOption[plotdat]{datadir}
+\DeclareStringOption[]{dataprefix}
+\DeclareStringOption[dat]{dataext}
+\DeclareStringOption[build]{builddir}
+
+\DeclareStringOption[python]{pythondir}
+\DeclareStringOption[pythontikzext]{pythonoutdir}
+\DeclareStringOption[py]{pythonoutprefix}
+\DeclareStringOption[py]{pythonext}
+
+\ProcessKeyvalOptions*\relax
+
+\usetikzlibrary{external}
+\tikzexternalize[prefix=\MakeSupport@extdir/,mode=list and make,export=false]
+\ifpdf
+\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape
+    -halt-on-error -interaction=batchmode -jobname '\image' '\texsource'}}
+\else
+\tikzset{external/system call={latex \tikzexternalcheckshellescape
+    -halt-on-error -interaction=batchmode -jobname '\image' '\texsource';
+    dvips -o '\image'.ps '\image.dvi'}}
+\fi
+
+
+\def\tikzexternal@list@and@make@prepare{%
+	\iftikzexternal@verboseio
+		\immediate\write16{Opening '\tikzexternal@realjob.makefile' for writing.}%
+	\fi
+	\begingroup
+		% this makes \tikzexternal@outmakefile global:
+		\globaldefs=1
+		% this gets round '\outer\newwrite' in plain TeX:
+		\csname newwrite\endcsname\tikzexternal@outmakefile
+	\endgroup
+	\immediate\openout\tikzexternal@outmakefile=\tikzexternal@realjob.makefile\relax
+	\immediate\write\tikzexternal@outmakefile{ALL_FIGURE_NAMES=\tikzexternal@DOLLARchar(shell cat \MakeSupport@builddir/\tikzexternal@realjob.figlist)}%
+	\immediate\write\tikzexternal@outmakefile{ALL_FIGURES=\tikzexternal@DOLLARchar(ALL_FIGURE_NAMES:\tikzexternal@PERCENTchar=\tikzexternal@PERCENTchar\tikzexternalimgextension)}%
+	\immediate\write\tikzexternal@outmakefile{}%
+	\immediate\write\tikzexternal@outmakefile{allimages: \tikzexternal@DOLLARchar(ALL_FIGURES)}%
+	\immediate\write\tikzexternal@outmakefile{\tikzexternal@TABchar @echo All images exist now. Use make -B to re-generate them.}%
+	\immediate\write\tikzexternal@outmakefile{}%
+	\immediate\write\tikzexternal@outmakefile{FORCEREMAKE:}%
+	\immediate\write\tikzexternal@outmakefile{}%
+	%
+	% support for .dep files and auto-dependencies:
+	\immediate\write\tikzexternal@outmakefile{include $(ALL_FIGURE_NAMES:\tikzexternal@PERCENTchar=\tikzexternal@PERCENTchar.\tikzexternaldepext)}%
+	\immediate\write\tikzexternal@outmakefile{}%
+	\tikzexternalmakefiledefaultdeprule
+	\immediate\write\tikzexternal@outmakefile{}%
+	\tikzexternal@outmakefile@pendingcommands
+	\pgfutil@ifundefined{AtEndDocument}{}{%
+		\AtEndDocument{\immediate\write16{===== mode=`list and make': Use 'make -f \tikzexternal@realjob.makefile' to generate all images. Then, re-run (pdf)latex \tikzexternal@realjob. =====}}%
+	}%
+}%
+
+\tikzset{%
+	external/add fig rule/.code args={.#1 depends: .#2,cmd:#3}{%
+        \tikzset{%
+            external/system call/.add={}{\noexpand\@firstoftwo ^^J},
+            external/system call/.add={}{\noexpand\@firstoftwo ^^J\image.#1: \MakeSupport@builddir/\image.#2},
+            external/system call/.add={}{^^J#3}
+        }
+    }
+}
+
+
+\tikzset{%
+		external/add fig rule={.md5 depends: .md5,cmd:cp \MakeSupport@builddir/\image.md5 \image.md5}
+}
+
+\ifthenelse{\boolean{MakeSupport@beamer}}{%
+	\newcommand*{\overlaynumber}{\number\beamer@slideinframe}%
+	\tikzset{%
+	  beamer externalizing/.style={%
+	    execute at end picture={%
+	      \tikzifexternalizing{%
+	        \ifbeamer@anotherslide
+	        \pgfexternalstorecommand{\string\global\string\beamer@anotherslidetrue}%
+	        \fi
+	      }{}%
+	    }%
+	  },
+	  external/optimize=false
+	}%
+	\let\orig@tikzsetnextfilename=\tikzsetnextfilename
+	\renewcommand\tikzsetnextfilename[1]{\orig@tikzsetnextfilename{#1-\overlaynumber}}%
+	\tikzset{every picture/.style={beamer externalizing}}%
+}{}
+
+%Could be adapted for python scripts generating tikz
+%\def\tikzexternalfiledependsonfile@append@to@makefile#1#2{%
+%	\edef\tikzexternal@temp{#1\tikzexternalimgextension: #2}%
+%	\expandafter\tikzexternalwritetomakefile\expandafter{\tikzexternal@temp}%
+%}
+
+\providecommand{\inputtikzfrompython}[1]{%
+	\edef\tikzexternal@temp{\MakeSupport@pythonoutdir/\MakeSupport@pythonoutprefix #1.tex: \MakeSupport@pythondir/#1.\MakeSupport@pythonext}%
+	\expandafter\tikzexternalwritetomakefile\expandafter{\tikzexternal@temp}%
+	\edef\tikzexternal@temp{\tikzexternal@TABchar python3 \MakeSupport@pythondir/#1.\MakeSupport@pythonext \tikzexternal@TABchar --outfile=\MakeSupport@pythonoutdir/\MakeSupport@pythonoutprefix #1.tex -d \MakeSupport@pythondir/}
+	\expandafter\tikzexternalwritetomakefile\expandafter{\tikzexternal@temp}%
+	%
+	\tikzset{/tikz/external/export=true}%
+	\tikzsetnextfilename{\MakeSupport@pythonoutprefix#1}%
+	\tikzpicturedependsonfile{\MakeSupport@pythonoutdir/\MakeSupport@pythonoutprefix#1.tex}%
+	\tikzsetnextfilename{\MakeSupport@pythonoutprefix#1}%
+	\tikzpicturedependsonfile{\MakeSupport@pythondir/#1.\MakeSupport@pythonoutprefix}%
+	\tikzsetnextfilename{\MakeSupport@pythonoutprefix#1}%
+	\input{\MakeSupport@pythonoutdir/\MakeSupport@pythonoutprefix#1.tex}%
+	\tikzset{/tikz/external/export=false}%
+}
+
+\providecommand{\inputtikz}[1]{%
+\tikzset{/tikz/external/export=true}%
+\tikzsetnextfilename{\MakeSupport@pictprefix#1}%
+\tikzpicturedependsonfile{\MakeSupport@pictdir/\MakeSupport@pictprefix#1.tex}%
+\tikzsetnextfilename{\MakeSupport@pictprefix#1}%
+\input{\MakeSupport@pictdir/\MakeSupport@pictprefix#1.tex}%
+\tikzset{/tikz/external/export=false}}
+
+\providecommand{\inputplot}[1]{%
+\tikzset{/tikz/external/export=true}%
+\tikzsetnextfilename{\MakeSupport@plotprefix#1}%
+\tikzpicturedependsonfile{\MakeSupport@plotdir/\MakeSupport@plotprefix#1.tex
+  \MakeSupport@datadir/\MakeSupport@dataprefix#1.\MakeSupport@dataext}%
+\tikzsetnextfilename{\MakeSupport@plotprefix#1}%
+\tikzifexternalizing{%
+  \pgfplotstableread{\MakeSupport@datadir/\MakeSupport@dataprefix#1.\MakeSupport@dataext}%
+  \plotdata}{}
+\input{\MakeSupport@plotdir/\MakeSupport@plotprefix#1.tex}%
+\tikzset{/tikz/external/export=false}}
+
+%\includesvg[width]{filename without .svg}
+\providecommand{\inputsvg}[2][\textwidth]{%
+	\IfFileExists{\MakeSupport@vectoroutdir/\MakeSupport@buildsvgprefix#2.pdf_tex}%
+	{%
+		\def\svgwidth{#1}%
+		\import{\MakeSupport@vectoroutdir}{\MakeSupport@buildsvgprefix#2.pdf_tex}%
+	}{%
+		\PackageError{MakeSupport}{File '\MakeSupport@vectoroutdir/\MakeSupport@buildsvgprefix#2.pdf_tex' not found!}{Maybe you have to run inkscape to generate the pdf_tex file.}
+	}%
+}
+
+\providecommand{\inputeps}[2][\textwidth]{%
+	\IfFileExists{\MakeSupport@vectoroutdir/\MakeSupport@buildepsprefix#2.pdf_tex}%
+	{%
+		\includegraphics[width=#1]{\MakeSupport@vectoroutdir/\MakeSupport@buildsvgprefix#2.pdf}%
+	}{%
+		\PackageError{MakeSupport}{File '\MakeSupport@vectoroutdir/\MakeSupport@buildepsprefix#2.pdf' not found!}{Maybe you have to run epstopdf to generate the pdf file.}
+	}%	
+}
+\endinput
+%%
+%% End of file `MakeSupport.sty'.
